@@ -8,8 +8,13 @@ function increment() {
 }
 
 function save() {
-    let countStr = count + " - "
-    saveEl.textContent += countStr
+    if(saveEl.innerText == 'Previous entries:') {
+        var countStr = ' ' + count
+    }
+    else {
+        var countStr = ' - ' + count
+    }
+    saveEl.innerText += countStr
     countEl.textContent = 0
     count = 0
 }
